@@ -16,6 +16,7 @@ function createGrid(size) {
       const squareSize = containerSize / size + "px";
       square.style.height = squareSize;
       square.style.width = squareSize;
+      square.style.opacity = "0.1";
       row.appendChild(square);
     }
     container.appendChild(row);
@@ -31,6 +32,8 @@ function changeColor(event) {
   if (id) {
     const square = document.querySelector("#" + id);
     square.style.backgroundColor = "pink";
+    console.log(square.style.opacity);
+    square.style.opacity = String(parseFloat(square.style.opacity) + 0.1);
   }
 }
 
